@@ -1,5 +1,9 @@
 
 const video = document.querySelector('video');
+var videoTracks2;
+var picture;
+var counter = 0;
+var takePic;
 
 const constraints = window.constraints = {
 	audio: false,
@@ -9,7 +13,8 @@ const constraints = window.constraints = {
 
 
 function handleSuccess(stream){
-	const videoTracks = stream.getVideoTracks();
+	videoTracks = stream.getVideoTracks();
+	videoTracks2 = stream.getVideoTracks()[0];
 	window.stream = stream;
 	video.srcObject = stream;
 };
@@ -23,9 +28,31 @@ async function init(){
 	}
 }
 
+function sendPhoto(){
+
+				counter++;
+				picture.takePhoto();
+				if(counter === 30){
+						clearInterval(takePic);
+						counter = 0;
+				}
+
+};
+
+
 function startGame(){
 				const r = Math.floor(Math.random() * 6);
-				console.log(r);
+				document.getElementById("number").innerHTML = r;
+
+				picture = new ImageCapture(videoTracks2);
+				picture.onphoto = showImage;
+
+				takePic = setInterval(sendPhoto, 1000)
+
+};
+
+function showImage(blobeven){
+				document.getElementById("handNumber").src = URL.createObjectURL(blobeven.data);
 };
 
 init();
