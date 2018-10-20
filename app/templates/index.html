@@ -2,11 +2,46 @@
 <html>
 <head>
 	<title>Finger Game</title>
+	<link rel="stylesheet" href= {{bulma}}>
+	<link rel="stylesheet" href= {{customStyle}}>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
 </head>
 
 <body>
-<video autoplay playsinline></video>
+	<header>
+					<div class="skew-1"></div>
+					<div class="skew-2"></div>
+	</header>
+	
+	<section class="section">
+	<div class = "container">
+	<h1 class = "title">
+		Finger Game
+	</h1>
+		<div class="columns">
+			<div class="column is-two-thirds">
+							<video class="video" autoplay playsinline></video>
+				<a id = "go" class="button is-danger is-outlined is-fullwidth is-large">
+  					Go
+				</a>
+			</div>
+			<div class="column is-one-third">
+							<div id = "square" class="box has-text-centered level">
+											<span class = "level-item" id="number">
+															#
+											</span>
+							</div>
 
-<script src= {{gameScript}}></script>
+
+			</div>
+		</div>
+	</div>
+	</section>
+
+
+	<script src= {{gameScript}}></script>
+
 </body>
 </html>

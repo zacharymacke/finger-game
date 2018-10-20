@@ -7,12 +7,12 @@ const constraints = window.constraints = {
 };
 
 
+
 function handleSuccess(stream){
 	const videoTracks = stream.getVideoTracks();
 	window.stream = stream;
 	video.srcObject = stream;
 };
-
 
 async function init(){
 	try{
@@ -23,4 +23,12 @@ async function init(){
 	}
 }
 
+function startGame(){
+				const r = Math.floor(Math.random() * 6);
+				console.log(r);
+};
+
 init();
+
+var el = document.getElementById("go");
+el.addEventListener("click", startGame)
