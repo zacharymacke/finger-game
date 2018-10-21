@@ -1,5 +1,6 @@
 
 const video = document.querySelector('video');
+const reader = new FileReader();
 var videoTracks2;
 var picture;
 var counter = 0;
@@ -32,16 +33,12 @@ async function init(){
 function sendPhoto(){
 
 		counter++;
-		picture.takePhoto();		
 		
 		var request = new XMLHttpRequest();
 		request.open("POST", "http://localhost:5000/image", true);
 		request.onload = function (oEvent){
 			console.log("uploaded");
 		};
-
-		var blob = new Blob(['photo'])
-		request.send(blob);
 		
 		request.onreadystatechange = () => {
 			if(request.readyState === 4 && request.status === 200){
@@ -53,12 +50,21 @@ function sendPhoto(){
 				}
 				
 			}
-				}
-				if(counter === 15){
-					clearInterval(takePic);
-					counter = 0;
-				}
+		}
+				
+		if(counter === 15){
+			clearInterval(takePic);
+			counter = 0;
+		}
 
+		picture.takePhoto()
+			.then(blob => {
+				reader.readAsDataURL(blob);
+				reader.onloadend = () => {
+					let base64 = reader.result;
+					request.send(base64);
+				}
+			});		
 };
 
 function generateRandom(){
