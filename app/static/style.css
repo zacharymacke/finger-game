@@ -1,68 +1,67 @@
-
-.video{
-	width: 100%;
+header {
+  position: relative;
 }
 
-header{
-	position: relative;
+.skew-1 {
+  top: -200px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  padding: 100px;
+  background-color: #E53935;
+  transform: skewy(-12deg);
 }
 
-#square{
-	width: 100%;
-	font-size: 6rem;
+.skew-2 {
+  top: -40px;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  transform: skewy(-12deg);
+  padding: 100px;
+  background-color: #F44336;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-#square:after{
-	content: "";
-	display: block;
-	padding-bottom: 100%;
+.video {
+  width: 100%;
 }
 
-#number{
-	font-size: 6rem;
-	font-weight: 900;
-	color: #333;
+#square {
+  width: 100%;
+  font-size: 6rem;
 }
 
-.title{
-	text-shadow: -4px 3px 0px #655858;
-	color: white;
-	font-size: 4.5rem;
-	font-weight: 900;
+#square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
-.button.is-danger.is-outlined{
-	border-width: 3px;
-	font-weight: bold;
-	border-color: #F44336;
+#number {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #333;
 }
 
-.button.is-danger.is-outlined:focus, .button.is-danger.is-outlined:hover{
-	background-color: #F44336;
+.title {
+  text-shadow: -4px 3px 0px #655858;
+  color: white;
+  font-size: 4.5rem;
+  font-weight: 900;
 }
 
-
-.skew-2{
-	top: -40px;
-	overflow: hidden;
-	width: 100%;
-	position: absolute;
-	transform: skewy(-12deg);
-	padding: 100px;
-	background-color: #F44336;
-	box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
-}
-.skew-1{
-	top: -200px;
-	position: absolute;
-	overflow: hidden;
-	width: 100%;
-	padding: 100px;
-	background-color: #E53935;
-	transform: skewy(-12deg);
+.button.is-danger.is-outlined {
+  border-width: 3px;
+  font-weight: bold;
+  border-color: #F44336;
 }
 
-.container-h{
-	margin-left: 10px;
+.button.is-danger.is-outlined:focus,
+.button.is-danger.is-outlined:hover {
+  background-color: #F44336;
 }
 
+.container-h {
+  margin-left: 10px;
+}
