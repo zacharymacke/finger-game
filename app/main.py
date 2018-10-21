@@ -3,6 +3,7 @@ from flask import render_template
 from flask import url_for
 from flask import request
 from flask import jsonify
+from random import *
 app = Flask(__name__)
 @app.route('/')
 def play():
@@ -15,7 +16,7 @@ def play():
 def processImage():
     #print(list(request.data))
     return jsonify(
-            fingerNumber = 3
+            fingerNumber = randint(0,5)
             )
 
 

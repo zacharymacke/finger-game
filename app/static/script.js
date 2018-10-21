@@ -4,6 +4,7 @@ var videoTracks2;
 var picture;
 var counter = 0;
 var takePic;
+var r;
 
 const constraints = window.constraints = {
 	audio: false,
@@ -43,28 +44,43 @@ function sendPhoto(){
 
 				request.send(blob);
 
-				if(counter === 30){
+				request.onreadystatechange = () => {
+
+								if(request.readyState === 4 && request.status === 200){
+												console.log(request.responseText);
+												
+												var fNum = JSON.parse(request.responseText).fingerNumber;
+												console.log(fNum);
+												if(fNum === r){
+																generateRandom();
+												}
+												
+								}
+				}
+
+				if(counter === 15){
 						clearInterval(takePic);
 						counter = 0;
 				}
 
 };
 
-
-function startGame(){
-				const r = Math.floor(Math.random() * 6);
+function generateRandom(){
+				r = Math.floor(Math.random() * 6);
 				document.getElementById("number").innerHTML = r;
 
+}
+
+function startGame(){
+
+				generateRandom();
+
 				picture = new ImageCapture(videoTracks2);
-				picture.onphoto = showImage;
 
-				takePic = setInterval(sendPhoto, 1000)
+				takePic = setInterval(sendPhoto, 2000)
 
 };
 
-function showImage(blobeven){
-				document.getElementById("handNumber").src = URL.createObjectURL(blobeven.data);
-};
 
 init();
 
