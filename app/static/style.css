@@ -1,75 +1,68 @@
 
 .video{
-				width: 100%;
+	width: 100%;
 }
-
-
-body{
-}
-
 
 header{
-				position: relative;
+	position: relative;
 }
 
 #square{
-				width: 100%;
-				font-size: 6rem;
-				
-
+	width: 100%;
+	font-size: 6rem;
 }
 
 #square:after{
-				content: "";
-				display: block;
-				padding-bottom: 100%;
+	content: "";
+	display: block;
+	padding-bottom: 100%;
 }
 
 #number{
-				font-size: 6rem;
-				font-weight: 900;
-				color: #333;
+	font-size: 6rem;
+	font-weight: 900;
+	color: #333;
 }
 
 .title{
-				text-shadow: -4px 3px 0px #655858;
-				color: white;
-				font-size: 4.5rem;
-				font-weight: 900;
+	text-shadow: -4px 3px 0px #655858;
+	color: white;
+	font-size: 4.5rem;
+	font-weight: 900;
 }
 
 .button.is-danger.is-outlined{
-				border-width: 3px;
-				font-weight: bold;
-				border-color: #F44336;
+	border-width: 3px;
+	font-weight: bold;
+	border-color: #F44336;
 }
 
 .button.is-danger.is-outlined:focus, .button.is-danger.is-outlined:hover{
-				background-color: #F44336;
+	background-color: #F44336;
 }
 
 
 .skew-2{
-				top: -40px;
-				overflow: hidden;
-				width: 100%;
-				position: absolute;
-				transform: skewy(-12deg);
-				padding: 100px;
-				background-color: #F44336;
-				box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
+	top: -40px;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	transform: skewy(-12deg);
+	padding: 100px;
+	background-color: #F44336;
+	box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .skew-1{
-				top: -200px;
-				position: absolute;
-				overflow: hidden;
-				width: 100%;
-				padding: 100px;
-				background-color: #E53935;
-				transform: skewy(-12deg);
+	top: -200px;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	padding: 100px;
+	background-color: #E53935;
+	transform: skewy(-12deg);
 }
 
 .container-h{
-				margin-left: 10px;
+	margin-left: 10px;
 }
 
