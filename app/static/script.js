@@ -32,6 +32,17 @@ function sendPhoto(){
 
 				counter++;
 				picture.takePhoto();
+				
+				var request = new XMLHttpRequest();
+				request.open("POST", "http://localhost:5000/image", true);
+				request.onload = function (oEvent){
+								console.log("uploaded");
+				};
+
+				var blob = new Blob(['photo'])
+
+				request.send(blob);
+
 				if(counter === 30){
 						clearInterval(takePic);
 						counter = 0;
