@@ -40,27 +40,23 @@ function sendPhoto(){
 			console.log("uploaded");
 		};
 
-				var blob = new Blob(['photo'])
-
-				request.send(blob);
-
-				request.onreadystatechange = () => {
-
-								if(request.readyState === 4 && request.status === 200){
-												console.log(request.responseText);
-												
-												var fNum = JSON.parse(request.responseText).fingerNumber;
-												console.log(fNum);
-												if(fNum === r){
-																generateRandom();
-												}
-												
-								}
+		var blob = new Blob(['photo'])
+		request.send(blob);
+		
+		request.onreadystatechange = () => {
+			if(request.readyState === 4 && request.status === 200){
+				console.log(request.responseText);								
+				var fNum = JSON.parse(request.responseText).fingerNumber;
+				console.log(fNum);
+				if(fNum === r){
+					generateRandom();	
 				}
-
+				
+			}
+				}
 				if(counter === 15){
-						clearInterval(takePic);
-						counter = 0;
+					clearInterval(takePic);
+					counter = 0;
 				}
 
 };
