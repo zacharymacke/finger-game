@@ -2,3 +2,7 @@
 
 # Finger Game
 HackISU 2018 project
+
+
+yolo code from:
+https://github.com/ayooshkathuria/pytorch-yolo-v3
