@@ -31,14 +31,14 @@ async function init(){
 
 function sendPhoto(){
 
-				counter++;
-				picture.takePhoto();
-				
-				var request = new XMLHttpRequest();
-				request.open("POST", "http://localhost:5000/image", true);
-				request.onload = function (oEvent){
-								console.log("uploaded");
-				};
+		counter++;
+		picture.takePhoto();		
+		
+		var request = new XMLHttpRequest();
+		request.open("POST", "http://localhost:5000/image", true);
+		request.onload = function (oEvent){
+			console.log("uploaded");
+		};
 
 				var blob = new Blob(['photo'])
 
@@ -66,19 +66,16 @@ function sendPhoto(){
 };
 
 function generateRandom(){
-				r = Math.floor(Math.random() * 6);
-				document.getElementById("number").innerHTML = r;
+	r = Math.floor(Math.random() * 6);
+	document.getElementById("number").innerHTML = r;
 
 }
 
 function startGame(){
+	generateRandom();
 
-				generateRandom();
-
-				picture = new ImageCapture(videoTracks2);
-
-				takePic = setInterval(sendPhoto, 2000)
-
+	picture = new ImageCapture(videoTracks2);
+	takePic = setInterval(sendPhoto, 2000)
 };
 
 
